@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- 	<settings> 
+         <setting name="logImpl" value="LOG4J"/> 
+   </settings>  -->
+
+	<!-- <properties url="file:///D:\workspace-jd2013\mybatis_jd2010\src\db.properties">
+		<property name="username" value="ly"/>
+		<property name="password" value="ly"/>
+	</properties> -->
+	
+	<typeAliases>
+		<!-- 注意区别两种方式别名的不同 大小写区分 -->
+		<typeAlias type="com.briup.pojo.Student" alias="student"/>
+		<!-- <package name="com.briup.pojo"></package> -->
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521" />
+				<property name="username" value="ly" />
+				<property name="password" value="ly" />
+<!-- 				<property name="username" value="${username}" />
+				<property name="password" value="${password}" /> -->
+			</dataSource>
+		</environment>
+		
+	</environments>
+	
+	<mappers>
+		<!-- mapper标签的四个属性  resource url class package -->
+		<mapper resource="com/briup/day1/IStudentDao.xml"/>
+	</mappers>
+	
+</configuration>
+
+
+
+
+
