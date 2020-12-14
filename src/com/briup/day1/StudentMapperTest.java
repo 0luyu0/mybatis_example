@@ -21,12 +21,17 @@ public class StudentMapperTest {
 			InputStream ins = Resources.getResourceAsStream("mybatis-config.xml");
 			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(ins);
 			SqlSession session = sqlSessionFactory.openSession();
-			
+
 			IStudentDao studentDao = session.getMapper(IStudentDao.class);
+//			Student student = new Student(10,"wangwu","classThree");
+//			studentDao.insertStudent(student);
 			List<Student> stuList = studentDao.findAllStudent();
 			for (Student student : stuList) {
 				System.out.println(student);
 			}
+			
+			
+			session.commit();
 			session.close();
 		} catch (IOException e) {
 			e.printStackTrace();

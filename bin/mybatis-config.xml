@@ -5,7 +5,7 @@
          <setting name="logImpl" value="LOG4J"/> 
    </settings>  -->
 
-	<!-- <properties url="file:///D:\workspace-jd2013\mybatis_jd2010\src\db.properties">
+	<!-- <properties url="file:///F:\SpringToolSuite4_Project\mybatis_example\src\db.properties">
 		<property name="username" value="ly"/>
 		<property name="password" value="ly"/>
 	</properties> -->
@@ -16,12 +16,12 @@
 		<!-- <package name="com.briup.pojo"></package> -->
 	</typeAliases>
 	
-	<environments default="development">
+	<environments default="development">	<!-- 默认使用的环境id -->
 		<environment id="development">
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
 				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
-				<property name="url" value="jdbc:oracle:thin:@localhost:1521" />
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
 				<property name="username" value="ly" />
 				<property name="password" value="ly" />
 <!-- 				<property name="username" value="${username}" />
@@ -34,6 +34,7 @@
 	<mappers>
 		<!-- mapper标签的四个属性  resource url class package -->
 		<mapper resource="com/briup/day1/IStudentDao.xml"/>
+		<mapper resource="com/briup/day2/IStudentDao.xml"/>
 	</mappers>
 	
 </configuration>
